@@ -8,8 +8,16 @@
 import sys
 
 def head(file_path, number):
+
+    # 1以上の整数のみ受け付ける
+    if not number.isdigit(): return
+    number = int(number)
+
+    if number < 1: return
+
     with open(file_path, "r") as file:
 
+        # 指定した行数分抽出する
         # 最終行となる行に改行コードが入るため、一旦削除する
         head_text = [line.replace("\n", "") for line in file.readlines()[:number]]
         print "\n".join(head_text)
@@ -17,7 +25,6 @@ def head(file_path, number):
 if __name__ == '__main__':
 
     if len(sys.argv[1:]) == 0:
-        head("hightemp.txt", 5)
+        head("hightemp.txt", "5")
     elif len(sys.argv[1:]) == 1:
-        arg = str(sys.argv[1])
-        if arg.isdigit: head("hightemp.txt", int(sys.argv[1]))
+        head("hightemp.txt", sys.argv[1])
