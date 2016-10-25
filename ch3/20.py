@@ -21,5 +21,5 @@ def extract_uk():
 
 if __name__ == '__main__':
     text = extract_uk().encode("utf-8")
-    with open("uk.json", "w") as file:
+    with open("uk.txt", "w") as file:
         file.write(text)
