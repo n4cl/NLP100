@@ -36,5 +36,4 @@ def extract_basic_information():
     return row
 
 if __name__ == '__main__':
-    for i, j in extract_basic_information().items():
-        print j
+    print extract_basic_information()
