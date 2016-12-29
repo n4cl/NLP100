@@ -19,10 +19,11 @@ def map_morpheme(text):
         # 形態素解析結果を分割する
         surface, fields = line.split("\t")
         f = fields.split(",")
-        t = {"surface": surface
-           , "base": f[6]
-           , "pos": f[0]
-           , "pos1": f[1]}
+        t = {u"surface": surface.decode("utf-8")
+           , u"base": f[6].decode("utf-8")
+           , u"pos": f[0].decode("utf-8")
+           , u"pos1": f[1].decode("utf-8")
+             }
         mapping.append(t)
 
     return mapping
