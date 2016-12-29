@@ -2,8 +2,9 @@ NLP100 with Python
 ===
 
 言語処理100本ノックをPythonで実装  
-言語処理100本ノック - http://www.cl.ecei.tohoku.ac.jp/nlp100/
 
+言語処理100本ノック  
+http://www.cl.ecei.tohoku.ac.jp/nlp100/  
 利用データは、次のURL内から取得する  
 http://www.cl.ecei.tohoku.ac.jp/nlp100/#data
 
@@ -19,4 +20,6 @@ http://www.cl.ecei.tohoku.ac.jp/nlp100/#data
 - 要件
   - MeCab 0.996
   - mecab-python 0.996
+  - matplotlib 1.5.3
+  - numpy 1.11.3
 - neko.txt をダウンロードし、ch4フォルダに入れる
