@@ -17,9 +17,9 @@ if __name__ == '__main__':
     mapping = map_morpheme(text)
 
     # 除外リスト
-    surface = ["、", "。", "「", "」", "　"]
-    pos = "接頭詞"
-    pos1 = "接尾"
+    surface = [u"、", u"。", u"「", u"」", u"　"]
+    pos = u"接頭詞"
+    pos1 = u"接尾"
 
     words = [word["surface"] for word in mapping \
              if not word["surface"] in surface \

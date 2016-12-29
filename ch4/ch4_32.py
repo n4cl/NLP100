@@ -17,4 +17,4 @@ if __name__ == '__main__':
 
     # 割当結果を出力
     for m in mapping:
-        if m["pos"] == "動詞": print m["base"]
+        if m["pos"] == u"動詞": print m["base"]
