@@ -23,3 +23,9 @@ http://www.cl.ecei.tohoku.ac.jp/nlp100/#data
   - matplotlib 1.5.3
   - numpy 1.11.3
 - neko.txt をダウンロードし、ch4フォルダに入れる
+
+### ch5のスクリプトを実行する場合に必要な準備
+- 要件
+  - CaboCha 0.69
+- neko.txt をダウンロードし、ch5フォルダに入れる
+- ch5.pyを実行する
