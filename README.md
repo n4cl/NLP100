@@ -8,6 +8,10 @@ http://www.cl.ecei.tohoku.ac.jp/nlp100/
 利用データは、次のURL内から取得する  
 http://www.cl.ecei.tohoku.ac.jp/nlp100/#data
 
+## 動作環境
+- macOS 10.11.6
+- Python 2.7.9
+
 ## 詳細
 ### ch2のスクリプトを実行する場合に必要な準備
 - hightemp.txt をダウンロード後、ch2フォルダに入れる
