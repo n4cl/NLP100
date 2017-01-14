@@ -37,12 +37,12 @@ class Morph:
                      , self.pos
                      , self.pos1).encode("utf-8")
 
+# 係り受け解析の結果を読み込み
 with open("neko.txt.cabocha", "r") as file:
-    text = file.readline()
     sentence = []
     morph = []
 
-    while text:
+    for text in file:
         text = text.decode("utf-8")
 
         # 形態素列の判定
@@ -52,12 +52,10 @@ with open("neko.txt.cabocha", "r") as file:
             m = Morph(surface, elements[6], elements[0], elements[1])
             morph.append(m)
 
-            # 句点で文を区切る
-            if surface == u"。":
-                sentence.append(morph)
-                morph = []
-
-        text = file.readline()
+        # EOSで文を区切る
+        if text == "EOS\n":
+            sentence.append(morph)
+            morph = []
 
 # 3文目の形態素を出力
 for m in sentence[2]:
