@@ -7,7 +7,7 @@
 さらに，CaboChaの解析結果（neko.txt.cabocha）を読み込み，各文をMorphオブジェクトのリストとして表現し，3文目の形態素列を表示せよ．
 """
 
-class Morph:
+class Morph(object):
     def __init__(self, surface, base, pos, pos1):
         self.surface = surface
         self.base = base
