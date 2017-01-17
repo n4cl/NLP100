@@ -37,26 +37,28 @@ class Morph:
                      , self.pos
                      , self.pos1).encode("utf-8")
 
-# 係り受け解析の結果を読み込み
-with open("neko.txt.cabocha", "r") as file:
-    sentence = []
-    morph = []
+if __name__ == '__main__':
 
-    for text in file:
-        text = text.decode("utf-8")
+    # 係り受け解析の結果を読み込み
+    with open("neko.txt.cabocha", "r") as file:
+        sentence = []
+        morph = []
 
-        # 形態素列の判定
-        if text.find(u"\t") != -1:
-            surface, elements = text.split(u"\t")
-            elements = elements.split(u",")
-            m = Morph(surface, elements[6], elements[0], elements[1])
-            morph.append(m)
+        for text in file:
+            text = text.decode("utf-8")
 
-        # EOSで文を区切る
-        if text == "EOS\n":
-            sentence.append(morph)
-            morph = []
+            # 形態素列の判定
+            if text.find(u"\t") != -1:
+                surface, elements = text.split(u"\t")
+                elements = elements.split(u",")
+                m = Morph(surface, elements[6], elements[0], elements[1])
+                morph.append(m)
 
-# 3文目の形態素を出力
-for m in sentence[2]:
-    print m.surface
+            # EOSで文を区切る
+            if text == "EOS\n":
+                sentence.append(morph)
+                morph = []
+
+    # 3文目の形態素を出力
+    for m in sentence[2]:
+        print m.surface
