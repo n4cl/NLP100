@@ -14,9 +14,6 @@ class Morph:
         self.pos = pos
         self.pos1 = pos1
 
-    def enc(self, surface, base, pos, pos1):
-        return
-
     def __repr__(self):
         return u"Morph('{}'"\
                    u", '{}'" \
