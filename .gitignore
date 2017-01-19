@@ -1,0 +1,5 @@
+# Byte-compiled
+*.pyc
+
+# NLP100 data
+neko.txt*
