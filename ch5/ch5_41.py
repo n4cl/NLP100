@@ -10,20 +10,24 @@
 
 from ch5_40 import Morph
 
+
 class Chunk(object):
     def __init__(self, morphs, dst, srcs):
         self.morphs = morphs
         self.dst = dst
         self.srcs = srcs
 
-if __name__ == '__main__':
-    with open("neko.txt.cabocha", "r") as file:
-        chunk = None
-        sentence = []
-        chunks = []
-        morph = []
-        srcs = {}
 
+def analyze_dependency_structure(text):
+    """ テキストの係り受け解析を実行する """
+
+    chunk = None
+    sentence = []
+    chunks = []
+    morph = []
+    srcs = {}
+
+    with open(text, "r") as file:
         for line in file:
             line = line.decode("utf-8")
 
@@ -71,8 +75,17 @@ if __name__ == '__main__':
                 morph = []
                 srcs = {}
 
+    return sentence
+
+def ch5_41():
+
+    sentence = analyze_dependency_structure("neko.txt.cabocha")
+
     # 8文目の文節の文字列と係り先を表示
     for c in sentence[7]:
         chunk = [i.surface for i in c.morphs]
         chunk = "".join(chunk)
         print chunk, c.dst
+
+if __name__ == '__main__':
+    ch5_41()
