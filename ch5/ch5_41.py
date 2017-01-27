@@ -17,6 +17,8 @@ class Chunk(object):
         self.dst = dst
         self.srcs = srcs
 
+    def get_chunk(self):
+        return "".join([morph.surface for morph in self.morphs if morph.pos != u"記号"])
 
 def analyze_dependency_structure(text):
     """ テキストの係り受け解析を実行する """
