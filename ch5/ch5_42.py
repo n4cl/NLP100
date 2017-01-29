@@ -17,7 +17,7 @@ def ch5_42():
         for i, c in enumerate(sentence):
             relation.append(c.get_chunk())
             for src in c.srcs:
-                print relation[src] + relation[i]
+                print relation[src] + "\t" + relation[i]
 
 if __name__ == '__main__':
     ch5_42()
