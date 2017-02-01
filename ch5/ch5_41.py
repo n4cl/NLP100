@@ -16,9 +16,30 @@ class Chunk(object):
         self.morphs = morphs
         self.dst = dst
         self.srcs = srcs
+        self.noun = None
+        self.verb = None
 
     def get_chunk(self):
         return "".join([morph.surface for morph in self.morphs if morph.pos != u"記号"])
+
+    def has_part(self):
+        """ 文節に名詞、動詞を含むか判定 """
+
+        for morph in self.morphs:
+
+            if self.noun and self.verb:
+                return
+
+            if morph.pos == u"名詞":
+                self.noun = True
+                continue
+
+            if morph.pos == u"動詞":
+                self.verb = True
+                continue
+
+        return
+
 
 def analyze_dependency_structure(text):
     """ テキストの係り受け解析を実行する """
