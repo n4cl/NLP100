@@ -18,19 +18,19 @@ word_2 = "paragraph"
 x = set(n_gram(2, word_1))
 y = set(n_gram(2, word_2))
 
-print "Xの集合:" + str(list(x))
-print "Yの集合:" + str(list(y))
+print u"Xの集合:" + str(list(x))
+print u"Yの集合:" + str(list(y))
 
-print "XとYの和集合:" + str(list(x | y))
-print "XとYの積集合:" + str(list(x & y))
-print "XとYの差集合:" + str(list(x - y))
+print u"XとYの和集合:" + str(list(x | y))
+print u"XとYの積集合:" + str(list(x & y))
+print u"XとYの差集合:" + str(list(x - y))
 
 if 'se' in x:
-    print "seがxの中に含まれる"
+    print u"seがxの中に含まれる"
 else:
-    print "seがxの中に含まれない"
+    print u"seがxの中に含まれない"
 
 if 'se' in y:
-    print "seがyの中に含まれる"
+    print u"seがyの中に含まれる"
 else:
-    print "seがyの中に含まれない"
+    print u"seがyの中に含まれない"

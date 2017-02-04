@@ -7,6 +7,6 @@
 
 
 def template(x, y, z):
-    return "%s時の%sは%s" % (x, y, z)
+    return u"%s時の%sは%s" % (x, y, z)
 
-print template(x=12, y="気温", z=22.4)
+print template(x=12, y=u"気温", z=22.4)
