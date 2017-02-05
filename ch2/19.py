@@ -5,6 +5,7 @@
 各行の1列目の文字列の出現頻度を求め，その高い順に並べて表示せよ．確認にはcut, uniq, sortコマンドを用いよ．
 """
 
+
 def sort(file_path):
 
     with open(file_path, "r") as file:
@@ -24,7 +25,7 @@ def sort(file_path):
 
     # 降順で出力
     item = []
-    for i, j in sorted(word_list.items(), key=lambda x:x[1], reverse=True):
+    for i, j in sorted(word_list.items(), key=lambda x: x[1], reverse=True):
         for k in word_recode[i]:
             item.append("\t".join(k))
     print "\n".join(item)

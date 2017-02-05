@@ -10,7 +10,7 @@ def replace_tab_to_space(file_path):
     with open(file_path, "r") as file:
         text = file.read()
         text = text.replace("\t", " ")
-    
+
     return text
 
 if __name__ == '__main__':

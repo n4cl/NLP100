@@ -7,13 +7,15 @@
 
 import sys
 
-def split(file_path, line_number):
 
+def split(file_path, line_number):
     # 1以上の整数のみ受け付ける
-    if not line_number.isdigit(): return
+    if not line_number.isdigit():
+        return
     number = int(line_number)
 
-    if number < 1: return
+    if number < 1:
+        return
 
     with open(file_path, "r") as file:
         lines = file.readlines()
@@ -29,10 +31,11 @@ def split(file_path, line_number):
         j = 0
         for i in range(0, split_count):
             with open("output" + str(i), "w") as split_file:
-
                 # 分割した行ごとの最終行に改行コードが残ってしまうので削除
-                split_file.write("\n".join([line.replace("\n", "") for line in lines[j:j + number]]))
+                split_file.write("\n".join([line.replace("\n", "")
+                                            for line in lines[j:j + number]]))
             j += number
+
 
 if __name__ == '__main__':
 

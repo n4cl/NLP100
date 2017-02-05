@@ -7,19 +7,23 @@
 
 import sys
 
+
 def head(file_path, number):
 
     # 1以上の整数のみ受け付ける
-    if not number.isdigit(): return
+    if not number.isdigit():
+        return
     number = int(number)
 
-    if number < 1: return
+    if number < 1:
+        return
 
     with open(file_path, "r") as file:
         lines = file.readlines()
 
         # 最終行から必要な行数を抽出
-        head_text = [line.replace("\n", "") for line in lines[len(lines)-number:]]
+        head_text = [line.replace("\n", "")
+                     for line in lines[len(lines) - number:]]
         print "\n".join(head_text)
 
 if __name__ == '__main__':
