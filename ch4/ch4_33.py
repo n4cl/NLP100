@@ -17,4 +17,5 @@ if __name__ == '__main__':
 
     # 割当結果を出力
     for m in mapping:
-        if m["pos1"] == u"サ変接続": print m["surface"]
+        if m["pos1"] == u"サ変接続":
+            print m["surface"]

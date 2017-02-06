@@ -12,6 +12,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.font_manager import FontProperties
 
+
 def extract_noun(mapping):
     """ 名詞の抽出 """
 
@@ -20,9 +21,9 @@ def extract_noun(mapping):
     pos = u"接頭詞"
     pos1 = u"接尾"
 
-    words = [word["surface"] for word in mapping \
-             if not word["surface"] in surface \
-             and word["pos"] != pos \
+    words = [word["surface"] for word in mapping
+             if not word["surface"] in surface
+             and word["pos"] != pos
              and word["pos1"] != pos1]
 
     return words

@@ -7,6 +7,7 @@
 
 from ch4_30 import map_morpheme
 
+
 def extract_nouns(mapping):
     noun = []
     nouns = []

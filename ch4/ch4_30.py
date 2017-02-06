@@ -9,20 +9,22 @@
 
 import MeCab
 
+
 def map_morpheme(text):
     mapping = []
 
     m = MeCab.Tagger("mecabrc")
     for line in m.parse(text).split("\n"):
-        if line == "EOS": break
+        if line == "EOS":
+            break
 
         # 形態素解析結果を分割する
         surface, fields = line.split("\t")
         f = fields.split(",")
-        t = {u"surface": surface.decode("utf-8")
-           , u"base": f[6].decode("utf-8")
-           , u"pos": f[0].decode("utf-8")
-           , u"pos1": f[1].decode("utf-8")
+        t = {u"surface": surface.decode("utf-8"),
+             u"base": f[6].decode("utf-8"),
+             u"pos": f[0].decode("utf-8"),
+             u"pos1": f[1].decode("utf-8")
              }
         mapping.append(t)
 

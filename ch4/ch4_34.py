@@ -22,11 +22,11 @@ if __name__ == '__main__':
             begin = 1
             adj = []
             while True:
-                if mapping[i-begin]["pos"] == u"名詞":
-                    adj.append(mapping[i-begin]["surface"])
+                if mapping[i - begin]["pos"] == u"名詞":
+                    adj.append(mapping[i - begin]["surface"])
                     begin = begin + 1
-                elif mapping[i-begin]["pos1"] == u"格助詞":
-                    adj.append(mapping[i-begin]["surface"])
+                elif mapping[i - begin]["pos1"] == u"格助詞":
+                    adj.append(mapping[i - begin]["surface"])
                     begin = begin + 1
                 else:
                     break
@@ -35,11 +35,12 @@ if __name__ == '__main__':
             end = 1
             main = []
             while True:
-                if mapping[i+end]["pos"] == u"名詞":
-                    main.append(mapping[i+end]["surface"])
+                if mapping[i + end]["pos"] == u"名詞":
+                    main.append(mapping[i + end]["surface"])
                     end = end + 1
                 else:
                     break
 
             # 名詞句の出力
-            if begin != 1 and end != 1: print "".join(adj) + m["surface"] + "".join(main)
+            if begin != 1 and end != 1:
+                print "".join(adj) + m["surface"] + "".join(main)
