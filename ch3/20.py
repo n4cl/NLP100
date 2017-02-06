@@ -8,6 +8,7 @@ Wikipedia記事のJSONファイルを読み込み，「イギリス」に関す�
 
 import json
 
+
 def extract_uk():
     with open("jawiki-country.json", "r") as file:
         json_data = file.readline()

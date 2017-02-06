@@ -7,11 +7,12 @@
 
 from re import search, split, sub
 
+
 def extract_basic_information():
     row = {}
     with open("uk.txt", "r") as file:
         text = file.read()
-        text = search(r"\{\{基礎情報[\s\S]*?\n\}\}",text).group()
+        text = search(r"\{\{基礎情報[\s\S]*?\n\}\}", text).group()
         text = split(r"\n[\|}]", text)
     for i in text[1:-1]:
 
@@ -22,9 +23,11 @@ def extract_basic_information():
         sp = i.split("<br/>\n")
 
         if len(sp) == 1:
-            row[res.group(1)] = sub(r"\[\[([^|\]]+?\|)*(.+?)\]\]", r"\2", sub("'''", "", res.group(2)))
+            row[res.group(1)] = sub(r"\[\[([^|\]]+?\|)*(.+?)\]\]",
+                                    r"\2", sub("'''", "", res.group(2)))
         else:
-            row[res.group(1)] = sub(r"\[\[([^|\]]+?\|)*(.+?)\]\]", r"\2", res.group(2) + "".join(sp[1:]))
+            row[res.group(1)] = sub(r"\[\[([^|\]]+?\|)*(.+?)\]\]",
+                                    r"\2", res.group(2) + "".join(sp[1:]))
 
     return row
 

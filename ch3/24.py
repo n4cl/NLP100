@@ -7,12 +7,14 @@
 
 from re import search
 
+
 def extract_media():
     row = []
     with open("uk.txt", "r") as file:
         for i in file:
             media = search("(File|ファイル):(.*?)\|", i)
-            if media: row.append(media.group(2))
+            if media:
+                row.append(media.group(2))
 
     return row
 
