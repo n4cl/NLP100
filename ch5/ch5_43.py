@@ -27,7 +27,9 @@ def ch5_43():
             # 名詞を含む文節が、動詞を含む文節に係る場合のみ出力
             for src in chunk.srcs:
                 if relation[src].noun:
-                    print relation[src].get_chunk() + "\t" + relation[i].get_chunk()
+                    print relation[src].get_chunk() \
+                          + "\t" \
+                          + relation[i].get_chunk()
 
 
 if __name__ == '__main__':

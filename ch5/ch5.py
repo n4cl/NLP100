@@ -7,6 +7,7 @@
 
 import CaboCha
 
+
 def analyze_dependency_structure(text):
     c = CaboCha.Parser()
     res = c.parse(text)
@@ -21,8 +22,10 @@ with open("neko.txt", "r") as file:
         # 空行は無視
         if text != "\n":
             # 字下げ削除
-            if text[0] == u"　": text = text[1:]
-            analysis_result.append(analyze_dependency_structure(text.encode("utf-8")))
+            if text[0] == u"　":
+                text = text[1:]
+            analysis_result.append(
+                analyze_dependency_structure(text.encode("utf-8")))
 
 with open("neko.txt.cabocha", "w") as file:
     file.write("".join(analysis_result))

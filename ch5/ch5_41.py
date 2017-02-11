@@ -12,6 +12,7 @@ from ch5_40 import Morph
 
 
 class Chunk(object):
+
     def __init__(self, morphs, dst, srcs):
         self.morphs = morphs
         self.dst = dst
@@ -20,7 +21,7 @@ class Chunk(object):
         self.verb = None
 
     def get_chunk(self):
-        return "".join([morph.surface for morph in self.morphs if morph.pos != u"記号"])
+        return "".join([m.surface for m in self.morphs if m.pos != u"記号"])
 
     def has_part(self):
         """ 文節に名詞、動詞を含むか判定 """
@@ -99,6 +100,7 @@ def analyze_dependency_structure(text):
                 srcs = {}
 
     return sentence
+
 
 def ch5_41():
 

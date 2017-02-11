@@ -7,7 +7,9 @@
 さらに，CaboChaの解析結果（neko.txt.cabocha）を読み込み，各文をMorphオブジェクトのリストとして表現し，3文目の形態素列を表示せよ．
 """
 
+
 class Morph(object):
+
     def __init__(self, surface, base, pos, pos1):
         self.surface = surface
         self.base = base
@@ -16,23 +18,23 @@ class Morph(object):
 
     def __repr__(self):
         return u"Morph('{}'"\
-                   u", '{}'" \
-                   u", '{}'" \
-                   u", '{}')"\
-               .format(self.surface
-                     , self.base
-                     , self.pos
-                     , self.pos1).encode("utf-8")
+            u", '{}'" \
+            u", '{}'" \
+            u", '{}')"\
+               .format(self.surface,
+                       self.base,
+                       self.pos,
+                       self.pos1).encode("utf-8")
 
     def __str__(self):
         return u"Morph('surface':'{}'" \
-                   u", 'base':'{}'" \
-                   u", 'pos':'{}'" \
-                   u", 'pos1':'{}')"\
-               .format(self.surface
-                     , self.base
-                     , self.pos
-                     , self.pos1).encode("utf-8")
+            u", 'base':'{}'" \
+            u", 'pos':'{}'" \
+            u", 'pos1':'{}')"\
+               .format(self.surface,
+                       self.base,
+                       self.pos,
+                       self.pos1).encode("utf-8")
 
 if __name__ == '__main__':
 
