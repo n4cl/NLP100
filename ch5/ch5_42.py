@@ -8,16 +8,31 @@
 from ch5_41 import analyze_dependency_structure
 
 
-def ch5_42():
-    sentences = analyze_dependency_structure("neko.txt.cabocha")
+def create_relations(sentences):
 
-    # 文ごとに、係り元と係り先の組み合わせを表示
+    # 文ごとに、係り元と係り先の組み合わせを取得
+    s = []
     for sentence in sentences:
-        relation = []
-        for i, c in enumerate(sentence):
-            relation.append(c.get_chunk())
-            for src in c.srcs:
-                print relation[src] + "\t" + relation[i]
+        s.append(create_relation(sentence))
+
+    return s
+
+
+def create_relation(sentence):
+
+    # 文の係り元と係り先の組み合わせを取得
+    relation = []
+    relations = []
+    for i, c in enumerate(sentence):
+        relation.append(c.get_chunk())
+        for src in c.srcs:
+            relations.append([relation[src], relation[i]])
+
+    return relations
 
 if __name__ == '__main__':
-    ch5_42()
+    sentences = analyze_dependency_structure("neko.txt.cabocha")
+    relations = create_relations(sentences)
+    for relation in relations:
+        for r in relation:
+            print "\t".join(r)
