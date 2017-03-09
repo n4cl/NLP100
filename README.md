@@ -5,8 +5,6 @@ NLP100 with Python
 
 言語処理100本ノック  
 http://www.cl.ecei.tohoku.ac.jp/nlp100/  
-利用データは、次のURL内から取得する  
-http://www.cl.ecei.tohoku.ac.jp/nlp100/#data
 
 ## 動作環境
 - macOS 10.11.6
@@ -30,4 +28,6 @@ http://www.cl.ecei.tohoku.ac.jp/nlp100/#data
 ### ch5の注意事項
 - 要件
   - CaboCha 0.69
+  - graphviz 2.38.0
+  - pydot 1.2.3
 - ch5.py を実行後、ch5_40.py 以降が実行可能
