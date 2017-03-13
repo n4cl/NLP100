@@ -27,7 +27,7 @@ def create_graph(edges, seq):
     graph.add_node(n)
 
     # グラフを出力
-    graph.write_png("graph_from_edges_dot_" + str(seq) + ".png", prog="dot")
+    graph.write_png("graph/graph_from_edges_dot_" + str(seq) + ".png", prog="dot")
 
 
 if __name__ == '__main__':

@@ -3,3 +3,7 @@
 
 # NLP100 data
 neko.txt*
+
+# ch5_44
+ch5/graph/*
+!.gitkeep
