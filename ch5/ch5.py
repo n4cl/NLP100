@@ -9,6 +9,10 @@ import CaboCha
 
 
 def analyze_dependency_structure(text):
+    """ 係り受け解析を実行する
+    :param text: 行テキスト
+    :return : 行テキストを係り受け解析した結果の文字列
+    """
     c = CaboCha.Parser()
     res = c.parse(text)
     return res.toString(CaboCha.FORMAT_LATTICE)
