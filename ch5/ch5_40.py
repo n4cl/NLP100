@@ -9,8 +9,15 @@
 
 
 class Morph(object):
+    """ 形態素を表す """
 
     def __init__(self, surface, base, pos, pos1):
+        """
+        :param surface: 表層系
+        :param base: 基本形
+        :param pos: 品詞
+        :param pos1: 品詞細分類1
+        """
         self.surface = surface
         self.base = base
         self.pos = pos
