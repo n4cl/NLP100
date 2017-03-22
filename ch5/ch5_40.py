@@ -43,14 +43,14 @@ class Morph(object):
                        self.pos,
                        self.pos1).encode("utf-8")
 
-if __name__ == '__main__':
 
+def main():
     # 係り受け解析の結果を読み込み
-    with open("neko.txt.cabocha", "r") as file:
+    with open("neko.txt.cabocha", "r") as f:
         sentence = []
         morph = []
 
-        for text in file:
+        for text in f:
             text = text.decode("utf-8")
 
             # 形態素列の判定
@@ -68,3 +68,7 @@ if __name__ == '__main__':
     # 3文目の形態素を出力
     for m in sentence[2]:
         print m.surface
+
+
+if __name__ == '__main__':
+    main()
