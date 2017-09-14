@@ -1,6 +1,9 @@
 # Byte-compiled
 *.pyc
 
+# Jupyter notebook
+.ipynb_checkpoints
+
 # NLP100 data
 neko.txt*
 
