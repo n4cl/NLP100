@@ -4,6 +4,9 @@
 # Jupyter notebook
 .ipynb_checkpoints
 
+# IntelliJ
+.idea
+
 # NLP100 data
 *.txt*
 *.json
