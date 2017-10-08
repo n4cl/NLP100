@@ -5,10 +5,10 @@
 各行の1列目だけを抜き出したものをcol1.txtに，2列目だけを抜き出したものをcol2.txtとしてファイルに保存せよ．確認にはcutコマンドを用いよ．
 """
 
-with open("hightemp.txt", "r") as file:
+with open("hightemp.txt", "r") as f:
 
     # テキストを行単位で全て読み込み
-    text = file.readlines()
+    text = f.readlines()
 
     # 列の抽出
     first_col = [line.split()[0] for line in text]

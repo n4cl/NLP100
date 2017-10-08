@@ -18,12 +18,12 @@ def head(file_path, number):
     if number < 1:
         return
 
-    with open(file_path, "r") as file:
+    with open(file_path, "r") as f:
 
         # 指定した行数分抽出する
         # 最終行となる行に改行コードが入るため、一旦削除する
         head_text = [line.replace("\n", "")
-                     for line in file.readlines()[:number]]
+                     for line in f.readlines()[:number]]
         print "\n".join(head_text)
 
 if __name__ == '__main__':

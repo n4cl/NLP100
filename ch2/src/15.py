@@ -18,8 +18,8 @@ def head(file_path, number):
     if number < 1:
         return
 
-    with open(file_path, "r") as file:
-        lines = file.readlines()
+    with open(file_path, "r") as f:
+        lines = f.readlines()
 
         # 最終行から必要な行数を抽出
         head_text = [line.replace("\n", "")

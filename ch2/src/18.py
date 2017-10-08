@@ -10,8 +10,8 @@
 def sort(file_path):
 
     line_list = []
-    with open(file_path, "r") as file:
-        lines = file.readlines()
+    with open(file_path, "r") as f:
+        lines = f.readlines()
 
         # 各行を比較できるように、一行ごとにリスト化
         line_list += [line.split() for line in lines]

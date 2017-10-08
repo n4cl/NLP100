@@ -17,8 +17,8 @@ def split(file_path, line_number):
     if number < 1:
         return
 
-    with open(file_path, "r") as file:
-        lines = file.readlines()
+    with open(file_path, "r") as f:
+        lines = f.readlines()
         line_count = len(lines)
 
         # 割り切れない場合は、余りの分をループさせる

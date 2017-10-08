@@ -8,8 +8,8 @@
 
 def sort(file_path):
 
-    with open(file_path, "r") as file:
-        lines = file.readlines()
+    with open(file_path, "r") as f:
+        lines = f.readlines()
         word_list = {}
         word_recode = {}
 

@@ -11,8 +11,8 @@ def find_word_set(file_path):
     words = []
 
     # ファイルから1列目を取得
-    with open(file_path, "r") as file:
-        lines = file.readlines()
+    with open(file_path, "r") as f:
+        lines = f.readlines()
         words += [line.split()[0] for line in lines]
 
     # 重複単語を削除して単語を出力
