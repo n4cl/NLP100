@@ -3,6 +3,7 @@ set -eu
 
 # ch2
 curl -sS http://www.cl.ecei.tohoku.ac.jp/nlp100/data/hightemp.txt -o ./ch2/hightemp.txt
+cp -a ./ch2/hightemp.txt ./ch2/src/hightemp.txt
 
 # ch3
 curl -sS http://www.cl.ecei.tohoku.ac.jp/nlp100/data/jawiki-country.json.gz -o ./ch3/jawiki-country.json.gz
