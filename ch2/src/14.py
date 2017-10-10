@@ -26,6 +26,7 @@ def head(file_path, number):
                      for line in f.readlines()[:number]]
         print "\n".join(head_text)
 
+
 if __name__ == '__main__':
 
     if len(sys.argv[1:]) == 0:

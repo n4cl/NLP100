@@ -11,5 +11,6 @@ def count_line(file_path):
         number = sum([1 for _ in f])
     return number
 
+
 if __name__ == '__main__':
     print count_line("hightemp.txt")

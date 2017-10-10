@@ -19,5 +19,6 @@ def find_word_set(file_path):
     for word in set(words):
         print word
 
+
 if __name__ == '__main__':
     find_word_set("hightemp.txt")

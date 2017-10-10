@@ -30,5 +30,6 @@ def sort(file_path):
             item.append("\t".join(k))
     print "\n".join(item)
 
+
 if __name__ == '__main__':
     sort("hightemp.txt")

@@ -13,5 +13,6 @@ def replace_tab_to_space(file_path):
 
     return text
 
+
 if __name__ == '__main__':
     print replace_tab_to_space("hightemp.txt")
