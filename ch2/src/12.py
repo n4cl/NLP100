@@ -5,21 +5,33 @@
 各行の1列目だけを抜き出したものをcol1.txtに，2列目だけを抜き出したものをcol2.txtとしてファイルに保存せよ．確認にはcutコマンドを用いよ．
 """
 
-with open("hightemp.txt", "r") as f:
 
-    # テキストを行単位で全て読み込み
-    text = f.readlines()
+def select_column(text, number):
 
     # 列の抽出
-    first_col = [line.split()[0] for line in text]
-    second_col = [line.split()[1] for line in text]
+    column = [line.split()[number] for line in text]
 
     # 列要素の連結
-    first_col = "\n".join(first_col)
-    second_col = "\n".join(second_col)
+    return "\n".join(column)
 
-    with open("col1.txt", "w") as col:
-        col.write(first_col)
 
-    with open("col2.txt", "w") as col:
-        col.write(second_col)
+def main():
+    with open("hightemp.txt", "r") as f:
+        # テキストを行単位で全て読み込み
+        text = f.readlines()
+
+        # 1列目
+        first = select_column(text, 0)
+
+        # 2列目
+        second = select_column(text, 1)
+
+    with open("col1.txt", "w") as col1:
+        col1.write(first)
+
+    with open("col2.txt", "w") as col2:
+        col2.write(second)
+
+
+if __name__ == '__main__':
+    main()
