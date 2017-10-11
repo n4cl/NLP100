@@ -29,8 +29,17 @@ def main():
     with open("col1.txt", "w") as col1:
         col1.write(first)
 
+    # 出力確認
+    print u"1列目"
+    print first
+    print ""
+
     with open("col2.txt", "w") as col2:
         col2.write(second)
+
+    # 出力確認
+    print u"2列目"
+    print second
 
 
 if __name__ == '__main__':
