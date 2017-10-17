@@ -16,15 +16,18 @@ def sort(file_path):
         # 各行を比較できるように、一行ごとにリスト化
         line_list += [line.split() for line in lines]
 
-    # 挿入ソート
-    for i in range(1, len(lines)):
-        v = line_list[i]
-        j = i - 1
+    # バブルソート
+    while True:
+        is_sort = False
 
-        while j >= 0 and line_list[j][2] > v:
-            line_list[j + 1] = line_list[j]
-            j -= 1
-        line_list[j + 1] = v
+        for i in xrange(len(line_list)-1):
+            # 3カラム目で比較
+            if float(line_list[i][2]) < float(line_list[i+1][2]):
+                line_list[i], line_list[i+1] = line_list[i+1], line_list[i]
+                is_sort = True
+
+        if not is_sort:
+            break
 
     # リスト化された行を再度元のtab区切りの形に戻す
     item = ["\t".join(items) for items in line_list]
