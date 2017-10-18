@@ -4,32 +4,25 @@
 19. 各行の1コラム目の文字列の出現頻度を求め，出現頻度の高い順に並べる
 各行の1列目の文字列の出現頻度を求め，その高い順に並べて表示せよ．確認にはcut, uniq, sortコマンドを用いよ．
 """
+from collections import Counter
 
 
-def sort(file_path):
+def count(file_path):
 
     with open(file_path, "r") as f:
         lines = f.readlines()
-        word_list = {}
-        word_recode = {}
 
-        # 1カラム目の文字列のカウントと1カラム目の文字列のレコード別辞書作成
-        line_list = [line.split() for line in lines]
-        for line in line_list:
-            if line[0] not in word_list:
-                word_list[line[0]] = 0
-                word_recode[line[0]] = [line]
-            else:
-                word_recode[line[0]].append(line)
-            word_list[line[0]] += 1
+        # 1カラム目を取得
+        column = [line.split()[0] for line in lines]
+        column.sort()
 
-    # 降順で出力
-    item = []
-    for i, j in sorted(word_list.items(), key=lambda x: x[1], reverse=True):
-        for k in word_recode[i]:
-            item.append("\t".join(k))
-    print "\n".join(item)
+    # 文字列のカウント
+    count_result = Counter(column)
+
+    # 出現頻度が高い順に出力
+    for k, v in count_result.most_common():
+        print v, k
 
 
 if __name__ == '__main__':
-    sort("hightemp.txt")
+    count("hightemp.txt")
