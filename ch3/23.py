@@ -22,6 +22,10 @@ def extract_section_level():
 
     return row
 
-if __name__ == '__main__':
+
+def main():
     text = extract_section_level()
     print "\n".join(text)
+
+if __name__ == '__main__':
+    main()

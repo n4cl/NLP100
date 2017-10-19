@@ -20,7 +20,12 @@ def extract_uk():
             json_data = file.readline()
     return target
 
-if __name__ == '__main__':
+
+def main():
     text = extract_uk().encode("utf-8")
     with open("uk.txt", "w") as file:
         file.write(text)
+
+
+if __name__ == '__main__':
+    main()

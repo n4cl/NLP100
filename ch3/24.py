@@ -18,6 +18,10 @@ def extract_media():
 
     return row
 
-if __name__ == '__main__':
+
+def main():
     text = extract_media()
     print "\n".join(text)
+
+if __name__ == '__main__':
+    main()

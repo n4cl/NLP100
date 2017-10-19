@@ -19,6 +19,10 @@ def extract_category_value():
 
     return row
 
-if __name__ == '__main__':
+
+def main():
     text = extract_category_value()
     print "\n".join(text)
+
+if __name__ == '__main__':
+    main()
