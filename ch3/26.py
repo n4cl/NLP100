@@ -12,8 +12,8 @@ from re import search, split, sub
 
 def extract_basic_information():
     row = {}
-    with open("uk.txt", "r") as file:
-        text = file.read()
+    with open("uk.txt", "r") as f:
+        text = f.read()
         text = search(r"\{\{基礎情報[\s\S]*?\n\}\}", text).group()
         text = split(r"\n[\|}]", text)
     for i in text[1:-1]:

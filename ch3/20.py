@@ -10,21 +10,21 @@ import json
 
 
 def extract_uk():
-    with open("jawiki-country.json", "r") as file:
-        json_data = file.readline()
+    with open("jawiki-country.json", "r") as f:
+        json_data = f.readline()
         while json_data:
             load = json.loads(json_data)
             if load["title"] == u"イギリス":
                 target = load["text"]
                 break
-            json_data = file.readline()
+            json_data = f.readline()
     return target
 
 
 def main():
     text = extract_uk().encode("utf-8")
-    with open("uk.txt", "w") as file:
-        file.write(text)
+    with open("uk.txt", "w") as f:
+        f.write(text)
 
 
 if __name__ == '__main__':

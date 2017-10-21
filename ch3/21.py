@@ -10,8 +10,8 @@ from re import search
 
 def extract_category():
     row = []
-    with open("uk.txt", "r") as file:
-        for i in file:
+    with open("uk.txt", "r") as f:
+        for i in f:
             if search("\[Category:.*\]", i):
                 row.append(i)
 

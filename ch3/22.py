@@ -10,8 +10,8 @@ from re import search
 
 def extract_category_value():
     row = []
-    with open("uk.txt", "r") as file:
-        for i in file:
+    with open("uk.txt", "r") as f:
+        for i in f:
             # 後方参照を利用して、マッチした一部を抽出
             category = search("\[\[Category:(.*)\]\]", i)
             if category:

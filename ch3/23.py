@@ -10,8 +10,8 @@ from re import search
 
 def extract_section_level():
     row = []
-    with open("uk.txt", "r") as file:
-        for i in file:
+    with open("uk.txt", "r") as f:
+        for i in f:
             # .*? : 最小限のマッチ
             # .*  : =が複数あると、後尾の手前までマッチしてしまう
             section = search("^(\=+)\s?(.*?)\s?(\=+)$", i)

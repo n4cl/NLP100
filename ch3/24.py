@@ -10,8 +10,8 @@ from re import search
 
 def extract_media():
     row = []
-    with open("uk.txt", "r") as file:
-        for i in file:
+    with open("uk.txt", "r") as f:
+        for i in f:
             media = search("(File|ファイル):(.*?)\|", i)
             if media:
                 row.append(media.group(2))
