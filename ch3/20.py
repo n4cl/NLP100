@@ -12,6 +12,7 @@ import json
 def extract_uk():
     with open("jawiki-country.json", "r") as f:
         json_data = f.readline()
+        target = ""
         while json_data:
             load = json.loads(json_data)
             if load["title"] == u"イギリス":
