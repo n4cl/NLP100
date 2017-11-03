@@ -8,7 +8,7 @@
 import sys
 
 
-def head(file_path, number):
+def tail(file_path, number):
 
     # 1以上の整数のみ受け付ける
     if not number.isdigit():
@@ -30,6 +30,6 @@ def head(file_path, number):
 if __name__ == '__main__':
 
     if len(sys.argv[1:]) == 0:
-        head("hightemp.txt", "5")
+        tail("hightemp.txt", "5")
     elif len(sys.argv[1:]) == 1:
-        head("hightemp.txt", sys.argv[1])
+        tail("hightemp.txt", sys.argv[1])
