@@ -15,17 +15,23 @@ http://www.cl.ecei.tohoku.ac.jp/nlp100/
 以下のスクリプトを実行する
 > ./nlp100.sh
 
-### ch3の注意事項
+### 1章
+[実行結果](/ch1/Chapter1.ipynb)
+
+### 2章
+[実行結果](/ch2/Chapter2.ipynb)
+
+### 3章
 - 20.py を実行後、21.py 以降が実行可能
 
-### ch4の注意事項
+### 4章
 - 要件
   - MeCab 0.996
   - mecab-python 0.996
   - matplotlib 1.5.3
   - numpy 1.11.3
 
-### ch5の注意事項
+### 5章
 - 要件
   - CaboCha 0.69
   - graphviz 2.38.0
