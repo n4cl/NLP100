@@ -24,6 +24,11 @@ def extract_uk():
 
 def main():
     text = extract_uk().encode("utf-8")
+
+    # 記事本文の表示
+    print text
+
+    # jawiki-country.jsonが大きいので、利用する部分だけ書き出す
     with open("uk.txt", "w") as f:
         f.write(text)
 
