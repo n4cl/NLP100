@@ -22,7 +22,7 @@ http://www.cl.ecei.tohoku.ac.jp/nlp100/
 [実行結果](/ch2/Chapter2.ipynb)
 
 ### 3章
-- 20.py を実行後、21.py 以降が実行可能
+[実行結果](/ch3/Chapter3.ipynb)
 
 ### 4章
 - 要件
