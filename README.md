@@ -10,11 +10,7 @@ http://www.cl.ecei.tohoku.ac.jp/nlp100/
 - macOS 10.11.6
 - Python 2.7.9
 
-## 詳細
-### 各chで利用するデータの準備
-以下のスクリプトを実行する
-> ./nlp100.sh
-
+## 実行結果
 ### 1章
 [実行結果](/ch1/Chapter1.ipynb)
 
@@ -23,6 +19,11 @@ http://www.cl.ecei.tohoku.ac.jp/nlp100/
 
 ### 3章
 [実行結果](/ch3/Chapter3.ipynb)
+
+## 詳細
+### 各chで利用するデータの準備
+以下のスクリプトを実行する
+> ./nlp100.sh
 
 ### 4章
 - 要件
