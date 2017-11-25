@@ -39,4 +39,5 @@ def extract_basic_information():
     return row
 
 if __name__ == '__main__':
-    print extract_basic_information()
+    for k, v in extract_basic_information().items():
+        print "key: %s, value: %s" % (k, v)
