@@ -20,6 +20,9 @@ http://www.cl.ecei.tohoku.ac.jp/nlp100/
 ### 3章
 [実行結果](/ch3/Chapter3.ipynb)
 
+### 4章
+[実行結果](/ch4/Chapter4.ipynb)
+
 ## 詳細
 ### 各chで利用するデータの準備
 以下のスクリプトを実行する
