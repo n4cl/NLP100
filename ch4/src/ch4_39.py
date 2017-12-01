@@ -8,7 +8,6 @@
 from ch4_30 import map_morpheme
 from collections import Counter
 
-import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.font_manager import FontProperties
 
