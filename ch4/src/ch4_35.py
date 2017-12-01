@@ -24,8 +24,8 @@ def extract_nouns(mapping):
 
 if __name__ == '__main__':
 
-    with open("neko.txt", "r") as file:
-        text = file.read()
+    with open("neko.txt", "r") as f:
+        text = f.read()
 
     # 形態素解析処理
     mapping = map_morpheme(text)

@@ -32,8 +32,8 @@ def map_morpheme(text):
 
 if __name__ == '__main__':
 
-    with open("neko.txt", "r") as file:
-        text = file.read()
+    with open("neko.txt", "r") as f:
+        text = f.read()
 
     mapping = map_morpheme(text)
 
