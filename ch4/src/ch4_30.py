@@ -30,8 +30,8 @@ def map_morpheme(text):
 
     return mapping
 
-if __name__ == '__main__':
 
+def main():
     with open("neko.txt", "r") as f:
         text = f.read()
 
@@ -40,3 +40,6 @@ if __name__ == '__main__':
     # 割当結果を出力
     for m in mapping:
         print m["surface"], m["base"], m["pos"], m["pos1"]
+
+if __name__ == '__main__':
+    main()

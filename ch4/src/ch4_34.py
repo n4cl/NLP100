@@ -7,7 +7,8 @@
 
 from ch4_30 import map_morpheme
 
-if __name__ == '__main__':
+
+def main():
 
     with open("neko.txt", "r") as f:
         text = f.read()
@@ -44,3 +45,7 @@ if __name__ == '__main__':
             # 名詞句の出力
             if begin != 1 and end != 1:
                 print "".join(adj) + m["surface"] + "".join(main)
+
+
+if __name__ == '__main__':
+    main()

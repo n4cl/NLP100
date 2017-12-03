@@ -27,8 +27,8 @@ def extract_noun(mapping):
 
     return words
 
-if __name__ == '__main__':
 
+def main():
     with open("neko.txt", "r") as f:
         text = f.read()
 
@@ -52,3 +52,6 @@ if __name__ == '__main__':
     plt.xlabel(u"出現頻度", fontproperties=fp)
     plt.hist(word_count, bins=100, range=(0, 100))
     plt.show()
+
+if __name__ == '__main__':
+    main()

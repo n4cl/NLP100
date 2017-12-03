@@ -27,8 +27,8 @@ def extract_noun(mapping):
 
     return words
 
-if __name__ == '__main__':
 
+def main():
     with open("neko.txt", "r") as f:
         text = f.read()
 
@@ -58,3 +58,7 @@ if __name__ == '__main__':
     plt.yscale("log")
     plt.plot(rank, word_count)
     plt.show()
+
+
+if __name__ == '__main__':
+    main()

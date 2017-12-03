@@ -8,8 +8,8 @@
 from ch4_30 import map_morpheme
 from collections import Counter
 
-if __name__ == '__main__':
 
+def main():
     with open("neko.txt", "r") as f:
         text = f.read()
 
@@ -30,3 +30,7 @@ if __name__ == '__main__':
     counter = Counter(words)
     for word, cnt in counter.most_common():
         print word, cnt
+
+
+if __name__ == '__main__':
+    main()

@@ -7,8 +7,8 @@
 
 from ch4_30 import map_morpheme
 
-if __name__ == '__main__':
 
+def main():
     with open("neko.txt", "r") as f:
         text = f.read()
 
@@ -19,3 +19,6 @@ if __name__ == '__main__':
     for m in mapping:
         if m["pos"] == u"動詞":
             print m["surface"]
+
+if __name__ == '__main__':
+    main()

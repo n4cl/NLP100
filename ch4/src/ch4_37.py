@@ -28,8 +28,8 @@ def extract_noun(mapping):
 
     return words
 
-if __name__ == '__main__':
 
+def main():
     with open("neko.txt", "r") as f:
         text = f.read()
 
@@ -64,3 +64,6 @@ if __name__ == '__main__':
 
     plt.bar(x_len, count, align="center")
     plt.show()
+
+if __name__ == '__main__':
+    main()

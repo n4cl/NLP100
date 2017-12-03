@@ -22,8 +22,8 @@ def extract_nouns(mapping):
             noun = []
     return nouns
 
-if __name__ == '__main__':
 
+def main():
     with open("neko.txt", "r") as f:
         text = f.read()
 
@@ -35,3 +35,7 @@ if __name__ == '__main__':
 
     for noun in nouns:
         print noun
+
+
+if __name__ == '__main__':
+    main()
