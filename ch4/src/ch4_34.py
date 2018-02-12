@@ -17,17 +17,17 @@ def main():
     mapping = map_morpheme(text)
 
     for i, m in enumerate(mapping):
-        if m["surface"] == u"の" and m["pos"] == u"助詞":
+        if m.surface == u"の" and m.pos == u"助詞":
 
             # 付加部の取得
             begin = 1
             adj = []
             while True:
-                if mapping[i - begin]["pos"] == u"名詞":
-                    adj.append(mapping[i - begin]["surface"])
+                if mapping[i - begin].pos == u"名詞":
+                    adj.append(mapping[i - begin].surface)
                     begin += 1
-                elif mapping[i - begin]["pos1"] == u"格助詞":
-                    adj.append(mapping[i - begin]["surface"])
+                elif mapping[i - begin].pos1 == u"格助詞":
+                    adj.append(mapping[i - begin].surface)
                     begin += 1
                 else:
                     break
@@ -36,15 +36,15 @@ def main():
             end = 1
             main = []
             while True:
-                if mapping[i + end]["pos"] == u"名詞":
-                    main.append(mapping[i + end]["surface"])
+                if mapping[i + end].pos == u"名詞":
+                    main.append(mapping[i + end].surface)
                     end += 1
                 else:
                     break
 
             # 名詞句の出力
             if begin != 1 and end != 1:
-                print "".join(adj) + m["surface"] + "".join(main)
+                print "".join(adj) + m.surface + "".join(main)
 
 
 if __name__ == '__main__':

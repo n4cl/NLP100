@@ -21,10 +21,10 @@ def main():
     pos = u"接頭詞"
     pos1 = u"接尾"
 
-    words = [word["surface"] for word in mapping
-             if not word["surface"] in surface
-             and word["pos"] != pos
-             and word["pos1"] != pos1
+    words = [word.surface for word in mapping
+             if not word.surface in surface
+             and word.pos != pos
+             and word.pos1 != pos1
              ]
 
     counter = Counter(words)

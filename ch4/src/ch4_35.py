@@ -14,8 +14,8 @@ def extract_nouns(mapping):
     for i, m in enumerate(mapping):
 
         # 連続する名詞を抽出する
-        if m["pos"] == u"名詞":
-            noun.append(m["surface"])
+        if m.pos == u"名詞":
+            noun.append(m.surface)
         else:
             if len(noun) > 1:
                 nouns.append("".join(noun))
