@@ -1,4 +1,4 @@
-# encoding: utf-8
+# coding: utf-8
 
 """
 30. 形態素解析結果の読み込み
@@ -8,6 +8,29 @@
 """
 
 import MeCab
+
+
+class Morpheme(object):
+    def __init__(self, surface, base, pos, pos1):
+        """
+        :param surface: 表層系
+        :param base: 基本形
+        :param pos: 品詞
+        :param pos1: 品詞細分類1
+        """
+        self.surface = surface
+        self.base = base
+        self.pos = pos
+        self.pos1 = pos1
+
+    def __str__(self):
+        return u"表層形:{}\n" \
+               u"基本形:{}\n" \
+               u"品詞:{}\n" \
+               u"品詞細分類1:{}\n".format(self._surface
+                                       , self._base
+                                       , self._pos
+                                       , self._pos1).encode("utf-8")
 
 
 def map_morpheme(text):
@@ -21,13 +44,12 @@ def map_morpheme(text):
         # 形態素解析結果を分割する
         surface, fields = line.split("\t")
         f = fields.split(",")
-        t = {u"surface": surface.decode("utf-8"),
-             u"base": f[6].decode("utf-8"),
-             u"pos": f[0].decode("utf-8"),
-             u"pos1": f[1].decode("utf-8")
-             }
-        mapping.append(t)
-
+        morpheme = Morpheme(surface.decode("utf-8")
+                          , f[6].decode("utf-8")
+                          , f[0].decode("utf-8")
+                          , f[1].decode("utf-8")
+                            )
+        mapping.append(morpheme)
     return mapping
 
 
@@ -39,7 +61,7 @@ def main():
 
     # 割当結果を出力
     for m in mapping:
-        print m["surface"], m["base"], m["pos"], m["pos1"]
+        print m.surface, m.base, m.pos, m.pos1
 
 if __name__ == '__main__':
     main()
