@@ -41,3 +41,9 @@ http://www.cl.ecei.tohoku.ac.jp/nlp100/
   - graphviz 2.38.0
   - pydot 1.2.3
 - ch5.py を実行後、ch5_40.py 以降が実行可能
+
+### 7章
+- 要件
+  - Redis 4.0.8
+  - redis-py 2.10.6
+- ch7_60.py を実行すると、Redisにデータを登録
