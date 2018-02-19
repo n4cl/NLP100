@@ -18,6 +18,9 @@ def main():
 
     r = StrictRedis(host='localhost', port=6379, db=0)
 
+    # 接続しているDBを全消し
+    r.flushdb()
+
     # Redisに登録
     for dic in json_data:
 
