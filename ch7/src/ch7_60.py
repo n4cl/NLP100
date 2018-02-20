@@ -23,9 +23,8 @@ def main():
 
     # Redisに登録
     for dic in json_data:
-
         if "area" in dic:
-            r.set(dic["name"], dic["area"])
+            r.set(str(dic["id"]) + "_" + dic["name"], dic["area"])
 
 
 if __name__ == '__main__':
