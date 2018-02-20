@@ -14,14 +14,19 @@ def main(name):
     r = StrictRedis(host='localhost', port=6379, db=0)
 
     # Redisから取得
-    artist_name = r.get(name)
+    artist_name_list = r.keys("*_" + name)
 
-    if artist_name:
-        print artist_name
+    if artist_name_list:
+        for artist_name in artist_name_list:
+            _id = artist_name.split("_")[:1][0]
+            _name = "".join(artist_name.split("_")[1:])
+            print u"ID:{} アーティスト名:{} 活動場所:{}".format(_id, _name, r.get(artist_name))
     else:
         print u"データベースに存在しません"
 
 if __name__ == '__main__':
+
+    # 問題的はユニークな値で検索するのが正解な気がする
     if len(argv) == 2:
         main(argv[1])
     else:
