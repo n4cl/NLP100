@@ -16,3 +16,7 @@ cp -a ./ch4/neko.txt ./ch4/src/neko.txt
 
 # ch5
 cp -a ./ch4/neko.txt ./ch5/neko.txt
+
+# ch7
+curl -sS http://www.cl.ecei.tohoku.ac.jp/nlp100/data/artist.json.gz -o ./ch7/src/artist.json.gz
+gunzip -c ./ch7/src/artist.json.gz > ./ch7/src/artist.json
