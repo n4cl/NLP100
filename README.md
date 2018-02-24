@@ -47,4 +47,5 @@ http://www.cl.ecei.tohoku.ac.jp/nlp100/
   - Redis 4.0.8
   - redis-py 2.10.6
   - MongoDB 3.4
+  - pymongo 3.0.6
 - ch7_60.py を実行すると、Redisにデータを登録
