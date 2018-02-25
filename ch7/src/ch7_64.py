@@ -7,6 +7,7 @@
 """
 
 from json import loads
+from pymongo import MongoClient
 
 
 def main():
@@ -18,6 +19,12 @@ def main():
             # json stringをdic型に変換
             json_data.append(loads(line))
 
+    # MongoDBへ登録
+    client = MongoClient("localhost", 27017)
+    db = client.local
+    collection = db.artist
+
+    # 必要なデータを抽出しながら登録
     for artist in json_data:
         _aliases = []
         _tags = []
@@ -26,18 +33,22 @@ def main():
         if "aliases" in artist:
             for alias in artist["aliases"]:
                 _aliases.append(alias["name"])
+        else:
+            _aliases = None
 
         if "tags" in artist:
             for tag in artist["tags"]:
                 _tags.append(tag["value"])
+        else:
+            _tags = None
 
         if "rating" in artist:
             _rating = artist["rating"]["value"]
 
-        print artist["name"], _aliases, _tags, _rating
-
-    return
-
+        collection.insert({"name": artist["name"],
+                           "aliases": _aliases,
+                           "tags": _tags,
+                           "rating": _rating})
 
 if __name__ == '__main__':
     main()
