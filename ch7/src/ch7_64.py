@@ -28,29 +28,7 @@ def main():
 
     # 必要なデータを抽出しながら登録
     for artist in json_data:
-        _aliases = []
-        _tags = []
-        _rating = None
-
-        if "aliases" in artist:
-            for alias in artist["aliases"]:
-                _aliases.append(alias["name"])
-        else:
-            _aliases = None
-
-        if "tags" in artist:
-            for tag in artist["tags"]:
-                _tags.append(tag["value"])
-        else:
-            _tags = None
-
-        if "rating" in artist:
-            _rating = artist["rating"]["value"]
-
-        collection.insert({"name": artist["name"],
-                           "aliases": _aliases,
-                           "tags": _tags,
-                           "rating": _rating})
+        collection.insert_one(artist)
 
     # インデックスの生成
     collection.create_index("name")
