@@ -24,6 +24,8 @@ def main():
     db = client.local
     collection = db.artist
 
+    collection.drop()
+
     # 必要なデータを抽出しながら登録
     for artist in json_data:
         _aliases = []
@@ -49,6 +51,12 @@ def main():
                            "aliases": _aliases,
                            "tags": _tags,
                            "rating": _rating})
+
+    # インデックスの生成
+    collection.create_index("name")
+    collection.create_index("aliases")
+    collection.create_index("tags")
+    collection.create_index("rating")
 
 if __name__ == '__main__':
     main()
