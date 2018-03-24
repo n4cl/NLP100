@@ -30,22 +30,29 @@ http://www.cl.ecei.tohoku.ac.jp/nlp100/
 
 ### 4章
 - 要件
-  - MeCab 0.996
-  - mecab-python 0.996
-  - matplotlib 1.5.3
-  - numpy 1.11.3
+  - Middleware
+    - MeCab 0.996
+  - Python package
+    - mecab-python 0.996
+    - matplotlib 1.5.3
+    - numpy 1.11.3
 
 ### 5章
 - 要件
-  - CaboCha 0.69
-  - graphviz 2.38.0
-  - pydot 1.2.3
+  - Middleware
+    - CaboCha 0.69
+    - graphviz 2.38.0
+  - Python package
+    - pydot 1.2.3
 - ch5.py を実行後、ch5_40.py 以降が実行可能
 
 ### 7章
 - 要件
-  - Redis 4.0.8
-  - redis-py 2.10.6
-  - MongoDB 3.4
-  - pymongo 3.0.6
+  - Middleware
+    - Redis 4.0.8
+    - MongoDB 3.4
+  - Python package
+    - redis-py 2.10.6
+    - pymongo 3.0.6
 - ch7_60.py を実行すると、Redisにデータを登録
+- ch7_64.py を実行すると、MongoDBにデータを登録
