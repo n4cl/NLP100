@@ -8,7 +8,9 @@ from abc import ABCMeta, abstractmethod
 
 
 class ConfigReader(object):
-
+    """
+    コンフィグを読み取る
+    """
     __metaclass__ = ABCMeta
 
     def __init__(self, path):
@@ -26,6 +28,9 @@ class ConfigReader(object):
 
 
 class RedisConfig(ConfigReader):
+    """
+    Redisのコンフィグを読み取る
+    """
     def __init__(self, path):
         super(RedisConfig, self).__init__(path)
 
@@ -39,6 +44,9 @@ class RedisConfig(ConfigReader):
 
 
 class MongoDBConfig(ConfigReader):
+    """
+    MongoDBのコンフィグを読み取る
+    """
     def __init__(self, path):
         super(MongoDBConfig, self).__init__(path)
 
