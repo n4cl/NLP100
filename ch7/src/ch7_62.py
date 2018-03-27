@@ -6,11 +6,15 @@
 """
 
 from redis import StrictRedis
+from ConfigReader import RedisConfig
 
 
 def main():
     cnt = 0
-    r = StrictRedis(host='localhost', port=6379, db=0)
+    path = "./config.ini"
+    redis_config = RedisConfig(path)
+    host, port, db = redis_config.read_config()
+    r = StrictRedis(host=host, port=port, db=db)
     for key in r.keys():
         if r.get(key) == "Japan":
             cnt += 1

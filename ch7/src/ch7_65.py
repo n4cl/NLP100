@@ -6,6 +6,7 @@ MongoDBのインタラクティブシェルを用いて，"Queen"というアー
 さらに，これと同様の処理を行うプログラムを実装せよ．
 """
 
+from configparser import SafeConfigParser
 from pymongo import MongoClient
 
 

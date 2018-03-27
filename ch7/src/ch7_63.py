@@ -9,6 +9,7 @@ KVSを用い，アーティスト名（name）からタグと被タグ数（タ�
 from sys import argv
 from redis import StrictRedis
 from json import loads
+from ConfigReader import RedisConfig
 
 
 def build_db():
@@ -18,7 +19,10 @@ def build_db():
             # json stringをdic型に変換
             json_data.append(loads(line))
 
-    r = StrictRedis(host='localhost', port=6379, db=1)
+    path = "./config.ini"
+    redis_config = RedisConfig(path)
+    host, port, db = redis_config.read_config()
+    r = StrictRedis(host=host, port=port, db=db)
 
     # 接続しているDBを全消し
     r.flushdb()

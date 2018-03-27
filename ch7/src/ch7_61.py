@@ -7,11 +7,16 @@
 
 from redis import StrictRedis
 from sys import argv
+from ConfigReader import RedisConfig
 
 
 def main(name):
 
-    r = StrictRedis(host='localhost', port=6379, db=0)
+    path = "./config.ini"
+    redis_config = RedisConfig(path)
+    host, port, db = redis_config.read_config()
+
+    r = StrictRedis(host=host, port=port, db=db)
 
     # Redisから取得
     artist_name_list = r.keys("*_" + name)
