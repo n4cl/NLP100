@@ -35,6 +35,11 @@ class RedisConfig(ConfigReader):
         super(RedisConfig, self).__init__(path)
 
     def read_config(self):
+        """
+        Redisへ接続するための設定
+        :return:
+            (host, port, db): tuple: (ホスト名, ポート番号, データベース番号)
+        """
         config = super(RedisConfig, self).get_config()
         section = "redis"
         host = config.get(section, "host")
@@ -51,11 +56,17 @@ class MongoDBConfig(ConfigReader):
         super(MongoDBConfig, self).__init__(path)
 
     def read_config(self):
+        """
+        MongoDBへ接続するための設定
+        :return:
+            (host, port): tuple: (ホスト名, ポート番号)
+        """
         config = super(MongoDBConfig, self).get_config()
         section = "mongodb"
         host = config.get(section, "host")
         port = config.get(section, "port")
         return host, port
+
 
 if __name__ == '__main__':
     redis = RedisConfig("config.ini")
