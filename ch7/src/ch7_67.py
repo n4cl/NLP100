@@ -7,6 +7,7 @@
 
 from sys import argv
 from pymongo import MongoClient
+from ConfigReader import MongoDBConfig
 
 
 def search_artist_name(parm):
@@ -14,8 +15,13 @@ def search_artist_name(parm):
     query = parm
     query["aliases"] = {"$exists": "false"}
 
+    path = "./config.ini"
+    mongodb_config = MongoDBConfig(path)
+    host, port = mongodb_config.read_config()
+    port = int(port)
+
     # MongoDBからパラメータより検索
-    client = MongoClient("localhost", 27017)
+    client = MongoClient(host, port)
     db = client.local
     collection = db.artist
 

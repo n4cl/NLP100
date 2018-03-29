@@ -6,14 +6,18 @@
 """
 
 from pymongo import MongoClient
-import config
-#import HOST, PORT
+from ConfigReader import MongoDBConfig
 
 
 def search_top_artist():
 
+    path = "./config.ini"
+    mongodb_config = MongoDBConfig(path)
+    host, port = mongodb_config.read_config()
+    port = int(port)
+
     # MongoDBからパラメータより検索
-    client = MongoClient(HOST, PORT)
+    client = MongoClient(host, port)
     db = client.local
     collection = db.artist
 

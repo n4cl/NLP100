@@ -8,6 +8,7 @@
 
 from json import loads
 from pymongo import MongoClient
+from ConfigReader import MongoDBConfig
 
 
 def main():
@@ -19,8 +20,13 @@ def main():
             # json stringをdic型に変換
             json_data.append(loads(line))
 
+    path = "./config.ini"
+    mongodb_config = MongoDBConfig(path)
+    host, port = mongodb_config.read_config()
+    port = int(port)
+
     # MongoDBへ登録
-    client = MongoClient("localhost", 27017)
+    client = MongoClient(host, port)
     db = client.local
     collection = db.artist
 

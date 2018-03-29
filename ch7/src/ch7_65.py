@@ -6,14 +6,19 @@ MongoDBのインタラクティブシェルを用いて，"Queen"というアー
 さらに，これと同様の処理を行うプログラムを実装せよ．
 """
 
-from configparser import SafeConfigParser
 from pymongo import MongoClient
+from ConfigReader import MongoDBConfig
 
 
 def search_artist_info(parm):
 
+    path = "./config.ini"
+    mongodb_config = MongoDBConfig(path)
+    host, port = mongodb_config.read_config()
+    port = int(port)
+
     # MongoDBからパラメータより検索
-    client = MongoClient("localhost", 27017)
+    client = MongoClient(host, port)
     db = client.local
     collection = db.artist
 
