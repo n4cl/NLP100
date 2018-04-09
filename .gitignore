@@ -1,6 +1,9 @@
 # Byte-compiled
 *.pyc
 
+# virtualenv
+env
+
 # Jupyter notebook
 .ipynb_checkpoints
 
