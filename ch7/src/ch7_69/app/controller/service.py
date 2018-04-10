@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from flask import Blueprint, request, jsonify
+from flask import Blueprint, request, render_template
 
 
 app = Blueprint(__name__, "service")
@@ -8,8 +8,6 @@ app = Blueprint(__name__, "service")
 
 @app.route('/', methods=["GET", "POST"])
 def index():
-    if request.method == "POST":
-        return "Not Implemented"
-
-    elif request.method == "GET":
-        return "Not Implemented"
+    template = "index.html"
+    if request.method == "GET":
+        return render_template(template, title=u"トップページ")
