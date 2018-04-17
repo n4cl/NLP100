@@ -7,6 +7,9 @@ env
 # Jupyter notebook
 .ipynb_checkpoints
 
+# ESLint
+.eslintrc.js
+
 # IntelliJ
 .idea
 
