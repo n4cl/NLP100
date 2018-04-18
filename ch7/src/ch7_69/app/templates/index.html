@@ -1,18 +1,24 @@
 {% extends "fix_layout.html" %}
 {% block content %}
-<form>
-  <div class="form-group">
-    <label for="txt_art_nam">アーティスト名</label>
-    <input type="text" class="form-control" id="txt_art_nam">
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <div class="form-group">
+        <label for="txt_art_nam">アーティスト名</label>
+        <input type="text" class="form-control" id="txt_art_nam">
+      </div>
+      <div class="form-group">
+        <label for="txt_alt_nam">アーティスト別名</label>
+        <input type="text" class="form-control" id="txt_alt_nam">
+      </div>
+      <div class="form-group">
+        <label for="txt_art_tag">タグ</label>
+        <input type="text" class="form-control" id="txt_art_tag">
+      </div>
+      <button type="submit" class="btn btn-primary" id="btn_search">検索</button>
+    </div>
   </div>
-  <div class="form-group">
-    <label for="txt_alt_nam">アーティスト別名</label>
-    <input type="text" class="form-control" id="txt_alt_nam">
-  </div>
-  <div class="form-group">
-    <label for="txt_art_tag">タグ</label>
-    <input type="text" class="form-control" id="txt_art_tag">
-  </div>
-  <button type="submit" class="btn btn-primary">検索</button>
-</form>
+</div>
+<script type="text/javascript" src="./static/js/rest.js"></script>
+<script type="text/javascript" src="./static/js/index.js"></script>
 {% endblock %}
