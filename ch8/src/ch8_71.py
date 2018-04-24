@@ -130,8 +130,15 @@ STOP_LIST = [
 ]
 
 
-def main():
-    pass
+def has_stop_list(sentence):
+    # 単語毎に区切ってSTOP LISTに含まれるかチェックする
+    for word in sentence.split():
+        if word in STOP_LIST:
+            return True
+
+    return False
+
 
 if __name__ == '__main__':
-    main()
+    assert has_stop_list("vipoignant and funny .") == True
+    assert has_stop_list("good looks.") == False
