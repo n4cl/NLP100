@@ -4,7 +4,7 @@ from flask import Flask
 from app.controller import service
 
 app = Flask(__name__)
-app.register_blueprint(service.app, url_prefix="")
+app.register_blueprint(service.app)
 
 if __name__ == '__main__':
     SERVER_IP = "0.0.0.0"
