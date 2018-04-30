@@ -6,7 +6,7 @@ function syncGetRequest(uri) {
     req.send();
     if (req.status === 200) {
         // リダイレクトの判定
-        var redURI = req.getResponseHeader('AjaxRedirect');
+        var redURI = req.getResponseHeader("AjaxRedirect");
         if (redURI) {
             window.location.href = redURI;
             return null;
@@ -18,8 +18,8 @@ function syncGetRequest(uri) {
             }
         }
     } else if (req.status === 500) {
-        throw new Error('致命的なエラーが発生しました：' + req.status);
+        throw new Error("致命的なエラーが発生しました：" + req.status);
     } else {
-        throw new Error('致命的なエラーが発生しました：' + req.status);
+        throw new Error("致命的なエラーが発生しました：" + req.status);
     }
 }
