@@ -27,13 +27,13 @@ def search():
     name = request.args.get("name")
     alias = request.args.get("alias")
     tag = request.args.get("tag")
-
-    client = ArtistDBClient(name=name, alias=alias, tag=tag)
-    client.connect_db()
     artist = []
 
+    client = ArtistDBClient()
+    client.connect_db()
+
     # json化するときに邪魔なので、Object IDを削除する
-    for i in client.fetch_artist():
+    for i in client.fetch_artist(name=name, alias=alias, tag=tag):
         i.pop("_id")
         artist.append(i)
 

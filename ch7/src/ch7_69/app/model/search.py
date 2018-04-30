@@ -6,14 +6,11 @@ from config import MONGODB_HOST, MONGODB_PORT
 
 class ArtistDBClient(object):
 
-    def __init__(self, name, alias, tag):
-        self.name = name
-        self.alias = alias
-        self.tag = tag
+    def __init__(self):
         self.DB = None
 
-    def fetch_artist(self):
-        return self.DB.find({"name": self.name})
+    def fetch_artist(self, name, alias, tag):
+        return self.DB.find({"name": name})
 
     def connect_db(self):
         # MongoDBへ接続
