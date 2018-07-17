@@ -25,9 +25,3 @@ http://www.cl.ecei.tohoku.ac.jp/nlp100/
 
 ### 7章
 [実行結果](/ch7/Chapter7.ipynb)
-
-## 詳細
-### 各chで利用するデータの準備
-以下のスクリプトを実行する
-> ./nlp100.sh
-
