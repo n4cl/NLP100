@@ -1,4 +1,4 @@
-NLP100 with Python
+NLP100 with Python 2
 ===
 
 言語処理100本ノックをPythonで実装  
