@@ -1,5 +1,6 @@
-# Byte-compiled
+# Python
 *.pyc
+.python_history
 
 # virtualenv
 env
@@ -9,6 +10,9 @@ env
 
 # Mac
 .DS_Store
+
+# shell
+.ash_history
 
 # ESLint
 .eslintrc.js
@@ -23,3 +27,6 @@ env
 # ch5_44
 ch5/graph/*
 !.gitkeep
+
+# VSCode
+.vscode-server
